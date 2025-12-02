@@ -1,5 +1,8 @@
+-- TASK 1
+--a)
 SELECT
-    length
+    length,
+    title
 FROM
     film
 WHERE

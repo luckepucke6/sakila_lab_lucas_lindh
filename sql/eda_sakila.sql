@@ -58,3 +58,12 @@ ORDER BY
     cost_per_day DESC
 LIMIT
     10;
+
+-- e)
+SELECT
+    DISTINCT(first_name || ' ' || last_name) AS name,
+    fa.actor_id
+FROM
+    actor a
+JOIN
+    film_actor fa ON a.actor_id = fa.actor_id;

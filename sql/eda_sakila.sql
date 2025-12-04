@@ -96,10 +96,32 @@ JOIN customer cu ON cu.customer_id = r.customer_id
 GROUP BY c.category_id, c.name
 ORDER BY sum_rental DESC;
 
+-- 3. Hur många filmer finns i varje rating?
+SELECT
+    rating,
+    COUNT(rating) AS amount
+FROM
+    film
+GROUP BY
+    rating
+ORDER BY
+    amount DESC;
 
-
-
-
--- 3. Hur många hyrningar i snitt görs varje månad?
 -- 4. Vilket land hyr flest filmer?
+SELECT
+    co.country,
+    COUNT(r.rental_id) AS amount
+FROM
+    rental r
+JOIN customer c ON c.customer_id = r.customer_id
+JOIN address a ON c.address_id = a.address_id
+JOIN city ci ON ci.city_id = a.city_id
+JOIN country co ON ci.country_id = co.country_id
+GROUP BY
+    country
+ORDER BY
+    amount DESC
+LIMIT 10;
+
+
 -- 5. Vilka städer har flest kunder?

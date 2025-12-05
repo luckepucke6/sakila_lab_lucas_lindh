@@ -138,3 +138,11 @@ GROUP BY
     city, country
 ORDER BY customer_amount DESC
 LIMIT 10;
+
+
+-- Task 2
+-- a)
+SELECT
+    first_name || ' ' || last_name AS name
+FROM
+    customer;

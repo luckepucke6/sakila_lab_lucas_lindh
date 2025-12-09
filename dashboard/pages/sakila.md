@@ -70,3 +70,37 @@ select * from sakila.rating_distribution
     y=amount
     swapXY=true
 />
+
+## Longest films
+
+```sql longest_films
+select * from sakila.longest_films
+```
+
+<DataTable data={longest_films} />
+
+## Most rentals movies
+
+```sql most_rentals_movies
+select * from sakila.most_rentals_movies
+```
+<BarChart
+    data={most_rentals_movies}
+    title="Most rentals movies"
+    x=title
+    y=sum_rental
+    swapXY=true
+/>
+
+## Most rentals categorys
+
+```sql most_rentals_category
+select * from sakila.most_rentals_category
+```
+<BarChart
+    data={most_rentals_category}
+    title="Most rentals category"
+    x=name
+    y=sum_rental
+    swapXY=true
+/>

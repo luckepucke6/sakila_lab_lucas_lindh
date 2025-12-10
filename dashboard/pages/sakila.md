@@ -1,6 +1,8 @@
-# Sakila
+# Sakila Dashboard
 
-### Top customers by spending
+## Top customers by spending
+
+### Här analyserar jag vilka kunder som genererar mest revenue.
 
 ```sql top_customers
 select * from sakila.top_customers;
@@ -13,7 +15,9 @@ select * from sakila.top_customers;
     y=total_spent
 />
 
-### Revenue per category
+## Revenue per category
+
+### Vilka kategorier står för messt intäkter?
 
 ```sql revenue_per_category
 select * from sakila.revenue_per_category;
@@ -56,16 +60,19 @@ select * from sakila.revenue_per_category;
   }}
 />
 
+<div style="height:100px;"></div>
 
+# Film characteristics
 
 ## Rating distribution
+
+### Vilka ratings är vanligast?
 
 ```sql rating_distribution
 select * from sakila.rating_distribution
 ```
 <BarChart
     data={rating_distribution}
-    title="Rating distribution"
     x=rating
     y=amount
     swapXY=true
@@ -73,34 +80,72 @@ select * from sakila.rating_distribution
 
 ## Longest films
 
+### Visar de längsta filmer i Sakila databasen.
+
 ```sql longest_films
 select * from sakila.longest_films
 ```
 
 <DataTable data={longest_films} />
 
-## Most rentals movies
+<div style="height:100px;"></div>
+
+# Rentals (Movies and Categories)
+
+## Most rented movies
+
+### Här ser jag vilka filmer som är populärast.
 
 ```sql most_rentals_movies
 select * from sakila.most_rentals_movies
 ```
 <BarChart
     data={most_rentals_movies}
-    title="Most rentals movies"
     x=title
     y=sum_rental
     swapXY=true
 />
 
-## Most rentals categorys
+## Most rented categories
 
+### Här ser jag vilka kategorier som är populärast.
 ```sql most_rentals_category
 select * from sakila.most_rentals_category
 ```
 <BarChart
     data={most_rentals_category}
-    title="Most rentals category"
     x=name
     y=sum_rental
+    swapXY=true
+/>
+
+<div style="height:100px;"></div>
+
+# Geographic insights
+
+## Most rentals per country
+
+### Vilka länder hyr flest filmer?
+
+```sql most_rentals_per_country
+select * from sakila.most_rentals_per_country
+```
+<BarChart
+    data={most_rentals_per_country}
+    x=country
+    y=amount
+/>
+
+## Cities with most customers
+
+### Vilka städer har flest kunder?
+
+```sql cities_with_most_customers
+select * from sakila.cities_with_most_customers
+```
+<BarChart
+    data={cities_with_most_customers}
+    x=city
+    y=customer_amount
     swapXY=true
 />

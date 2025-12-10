@@ -13,11 +13,38 @@ Jag använder SQL för att göra det tunga databasjobbet. Det är bra för att g
 
 När jag väl har min DataFrame använder jag pandas för analysmomentet. Pandas passar bra när jag vill testa filter snabbt, göra mindre transformationer, gruppera på olika sätt, skapa nya kolumner eller visualisera datan. Det ger en flexibel miljö där jag kan fortsätta analysera utan att skriva om mina SQL-frågor.
 
-Task 0:
-I first created the folder structure.
-- data: Here I will have the databases.
-- notebooks: Here I will put my jupyter notebooks.
-- sql: Here I will put my queries and etc.
-- dashboard: This one is for task 3.
+# Sakila Movie Rental Analysis (MLOps Lab)
+Detta projektet är en del av MLOps kursens Sakila-labb.
+I projektet så laddar jag in Sakila-data med DLT, gör en EDA (Exploratory Data Analysis) i notebook, och bygger en BI-dashboard (Buisness Intelligence) med Evidence.
 
-Then I did uv init to have a virtual enviroment.
+## Struktur 
+- data/ - SQLite och DuckDB filer.
+- dashboard/ - Evidence projekt (BI-report)
+- notebooks/ - EDA och analyser
+- dlt_script.py - Pipeline SQLite -> DuckDB
+
+## Hur man kör projektet
+1. Kör först dlt_script.py -> uv run dlt_script.py
+2. Kör sedan Evidence-dashboarden -> cd dashboard && npm run dev
+
+## Projekt innehåll
+- DLT-pipeline för data ingestion
+- EDA i jupyter notebook
+- Grafer
+- Evidence-dashboard med 4 sektioner
+
+## Projektets syfte
+Ett komplett mini-MLOps flöde:
+- data ingestion
+- analys
+- visualisering
+- dashboard
+- reproducerbar pipeline
+
+## Tekniker som jag använt
+- DLT
+- DuckDB
+- SQLite
+- Jupyter Notebook
+- Evidence
+- ECharts

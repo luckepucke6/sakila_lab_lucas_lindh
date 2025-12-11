@@ -48,7 +48,7 @@ Ett komplett mini-MLOps flöde:
 - ECharts
 
 
-ENGLISH
+# ENGLISH
 
 # Highlights
 In this lab, I first built a pipeline using DLT that automatically loads the Sakila data from SQLite into DuckDB. This allows me to recreate the entire dataset with a single command.

@@ -17,7 +17,7 @@ select * from sakila.top_customers;
 
 ## Revenue per category
 
-### Vilka kategorier står för messt intäkter?
+### Vilka kategorier står för mest intäkter?
 
 ```sql revenue_per_category
 select * from sakila.revenue_per_category;

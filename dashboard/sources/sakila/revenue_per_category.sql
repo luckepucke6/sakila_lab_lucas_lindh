@@ -2,7 +2,7 @@ SELECT
     c.name AS category,
     SUM(p.amount) AS total_revenue
 FROM
-    category c
+    sakila.staging.category c
 JOIN film_category fc ON fc.category_id = c.category_id
 JOIN film f ON f.film_id = fc.film_id
 JOIN inventory i ON i.film_id = f.film_id

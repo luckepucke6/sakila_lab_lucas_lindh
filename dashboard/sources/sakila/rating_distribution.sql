@@ -2,7 +2,7 @@ SELECT
     rating,
     COUNT(rating) AS amount
 FROM
-    film
+    sakila.staging.film
 GROUP BY
     rating
 ORDER BY

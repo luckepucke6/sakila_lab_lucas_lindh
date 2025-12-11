@@ -2,7 +2,7 @@ SELECT
     title,
     length
 FROM
-    film
+    sakila.staging.film
 WHERE
     length >= 185
 ORDER BY
